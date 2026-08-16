@@ -17,6 +17,8 @@ https://raw.githubusercontent.com/Qmeko/DalamudPlugins/refs/heads/main/pluginmas
 
 3. `/xlplugins` を実行し、**ドマ式麻雀ソルバー デバッグ版** をインストールする
 
+初回起動時、Mortal AI が未導入なら自動でセットアップします（Python / PyTorch / 公開モデルのダウンロード。数分、数百MB）。Akochan は zip に同梱済みです。
+
 ## ワンクリック構築
 
 1. ZIPを短いパスへ展開します。

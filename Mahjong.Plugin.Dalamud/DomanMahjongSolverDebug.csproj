@@ -62,6 +62,9 @@
     <Content Include="..\tools\external-ai\*.*"
              Link="external-ai\%(Filename)%(Extension)"
              CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\build-tools\Install-MortalRuntime.ps1"
+             Link="external-ai\Install-MortalRuntime.ps1"
+             CopyToOutputDirectory="PreserveNewest" />
     <Content Include="..\third-party\AkochanRuntime\**\*"
              Link="AkochanRuntime\%(RecursiveDir)%(Filename)%(Extension)"
              CopyToOutputDirectory="PreserveNewest" />

@@ -71,6 +71,8 @@ public sealed class Plugin : IDalamudPlugin
 
     public DiscardCaptureLogger DiscardCaptureLogger { get; }
 
+    internal ExternalAi.MortalRuntimeInstaller MortalInstaller { get; private set; } = null!;
+
     public ErrorSink ErrorSink { get; }
     public IFindingsLog FindingsLog { get; }
     public ISigprobeLog SigprobeLog { get; }
@@ -253,6 +255,12 @@ public sealed class Plugin : IDalamudPlugin
         command = new MjAutoCommand(
             this, ChatGui, CommandManager, Framework, PluginInterface, SigScanner, mahjongAddon);
 
+        MortalInstaller = new ExternalAi.MortalRuntimeInstaller(
+            Log, ChatGui, Framework, pluginAssemblyDir);
+        MortalInstaller.Completed += OnMortalRuntimeInstalled;
+        if (Configuration.AiProvider == AiProvider.BundledMortal)
+            MortalInstaller.StartIfNeeded();
+
         PluginInterface.UiBuilder.Draw += WindowSystem.Draw;
         PluginInterface.UiBuilder.OpenMainUi += ToggleMainWindow;
         PluginInterface.UiBuilder.OpenConfigUi += ToggleSettingsWindow;
@@ -278,6 +286,11 @@ public sealed class Plugin : IDalamudPlugin
     public void Dispose()
     {
         MeldTracker.DeferralTimedOut -= OnMeldTrackerDeferralTimedOut;
+        if (MortalInstaller is not null)
+        {
+            MortalInstaller.Completed -= OnMortalRuntimeInstalled;
+            MortalInstaller.Dispose();
+        }
         command.Dispose();
         PluginInterface.UiBuilder.Draw -= WindowSystem.Draw;
         PluginInterface.UiBuilder.OpenMainUi -= ToggleMainWindow;
@@ -355,6 +368,11 @@ public sealed class Plugin : IDalamudPlugin
     /// Recreates the selected AI session and immediately asks the live board for
     /// a fresh decision. This is safe to invoke from the settings UI or watchdog.
     /// </summary>
+    private void OnMortalRuntimeInstalled()
+    {
+        ForceAiResync("mortal-runtime-installed");
+    }
+
     public void ForceAiResync(string reason)
     {
         if (Policy is not ExternalAi.SelectablePolicy selectable)

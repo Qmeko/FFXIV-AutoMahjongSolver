@@ -80,12 +80,7 @@ internal static class MortalRuntimeLocator
     {
         foreach (string root in CandidateRoots(pluginAssemblyDirectory).Distinct(StringComparer.OrdinalIgnoreCase))
         {
-            string python = Path.Combine(root, "venv", "Scripts", "python.exe");
-            string bot = Path.Combine(root, "bot", "bot.py");
-            string model = Path.Combine(root, "bot", "mortal.pth");
-            string libriichi = Path.Combine(root, "bot", "libriichi", "libriichi-3.12-x86_64-pc-windows-msvc.pyd");
-
-            if (!File.Exists(python) || !File.Exists(bot) || !File.Exists(model) || !File.Exists(libriichi))
+            if (!HasRequiredFiles(root))
                 continue;
 
             string configDirectory = Path.Combine(root, "config");
@@ -124,8 +119,15 @@ internal static class MortalRuntimeLocator
         }
 
         launch = null!;
-        error = "Mortal runtime was not found. Run BUILD_DEBUG_PLUGIN.bat to install and test it.";
+        error = "Mortalランタイムを準備しています。初回は数分かかることがあります。設定画面の進行状況を確認してください。";
         return false;
+    }
+
+    public static bool IsInstalled(string pluginAssemblyDirectory)
+    {
+        return CandidateRoots(pluginAssemblyDirectory)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
+            .Any(HasRequiredFiles);
     }
 
     public static string PreferredRuntimeRoot()
@@ -144,6 +146,14 @@ internal static class MortalRuntimeLocator
         string appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         if (!string.IsNullOrWhiteSpace(appData))
             yield return Path.Combine(appData, "DomanMahjongSolverDebug", RuntimeFolderName);
+    }
+
+    private static bool HasRequiredFiles(string root)
+    {
+        return File.Exists(Path.Combine(root, "venv", "Scripts", "python.exe"))
+            && File.Exists(Path.Combine(root, "bot", "bot.py"))
+            && File.Exists(Path.Combine(root, "bot", "mortal.pth"))
+            && File.Exists(Path.Combine(root, "bot", "libriichi", "libriichi-3.12-x86_64-pc-windows-msvc.pyd"));
     }
 
     private static string Quote(string value) => "\"" + value.Replace("\"", "\\\"") + "\"";

@@ -249,6 +249,8 @@ public sealed class SettingsWindow : Window, IDisposable
                         plugin.ConfigService.Update(c => c with { AiProvider = option });
                         if (plugin.Policy is SelectablePolicy selectablePolicy)
                             selectablePolicy.SelectProvider(option);
+                        if (option == AiProvider.BundledMortal)
+                            plugin.MortalInstaller.StartIfNeeded();
                         plugin.Aggregator.RefreshDecision();
                     }
                     if (selected)
@@ -291,6 +293,17 @@ public sealed class SettingsWindow : Window, IDisposable
 
             if (provider == AiProvider.BundledMortal)
             {
+                ImGui.Dummy(new Vector2(0, 4));
+                var install = plugin.MortalInstaller;
+                Theme.Subtle("セットアップ: " + install.StatusText);
+                if (install.State == MortalRuntimeInstaller.RuntimeInstallState.Failed
+                    && ImGui.Button("Mortalセットアップを再試行", new Vector2(260, 0)))
+                {
+                    install.StartIfNeeded();
+                }
+                if (install.State == MortalRuntimeInstaller.RuntimeInstallState.Installing)
+                    Theme.Subtle("初回のみ Python / PyTorch / モデルを自動ダウンロードします。完了まで待ってください。");
+
                 ImGui.Dummy(new Vector2(0, 4));
                 bool online = cfg.MortalOnline;
                 if (ImGui.Checkbox("Mortalオンライン推論を使用", ref online))

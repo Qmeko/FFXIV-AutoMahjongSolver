@@ -77,16 +77,24 @@ jobs:
       - name: Stage latest.zip
         shell: pwsh
         run: |
-          $src = 'Mahjong.Plugin.Dalamud/bin/Release/Mahjong.Plugin.Dalamud/latest.zip'
-          if (-not (Test-Path $src)) { throw "SDK-built plugin zip not found at $src" }
+          $candidates = @(
+            'Mahjong.Plugin.Dalamud/bin/Release/Mahjong.Plugin.Dalamud/latest.zip',
+            'Mahjong.Plugin.Dalamud/bin/Release/DomanMahjongSolverDebug/latest.zip',
+            'Mahjong.Plugin.Dalamud/bin/x64/Release/DomanMahjongSolverDebug/latest.zip'
+          )
+          $src = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+          if (-not $src) { throw "SDK-built plugin zip not found. Looked in: $($candidates -join ', ')" }
           Copy-Item $src 'latest.zip' -Force
+          Copy-Item $src 'DomanMahjongSolverDebug.zip' -Force
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.tag.outputs.target }}
           name: ${{ steps.tag.outputs.target }}
-          files: latest.zip
+          files: |
+            latest.zip
+            DomanMahjongSolverDebug.zip
           generate_release_notes: true
           fail_on_unmatched_files: true
 

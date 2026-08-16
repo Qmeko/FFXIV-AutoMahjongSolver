@@ -17,6 +17,8 @@ https://raw.githubusercontent.com/Qmeko/DalamudPlugins/refs/heads/main/pluginmas
 
 3. Run `/xlplugins` and install **ドマ式麻雀ソルバー デバッグ版**
 
+On first launch, missing Mortal AI files are downloaded automatically (Python / PyTorch / the public model). Akochan is already inside the plugin zip.
+
 ## Commands
 
 | Command | Description |

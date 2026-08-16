@@ -2,7 +2,8 @@
 param(
     [string]$Root,
     [string]$Output,
-    [switch]$Force
+    [switch]$Force,
+    [switch]$SkipSmokeTest
 )
 
 $ErrorActionPreference = 'Stop'
@@ -26,7 +27,10 @@ $UvExe = Join-Path $ToolsDir 'uv.exe'
 $Downloads = Join-Path $StateRoot 'Downloads'
 $UvPythonDir = Join-Path $StateRoot 'Python'
 $UvCacheDir = Join-Path $StateRoot 'UvCache'
-$SmokeTest = Join-Path $Root 'tools\external-ai\mortal_smoke_test.py'
+$SmokeTest = @(
+    (Join-Path $Root 'tools\external-ai\mortal_smoke_test.py'),
+    (Join-Path $Root 'external-ai\mortal_smoke_test.py')
+) | Where-Object { Test-Path $_ } | Select-Object -First 1
 $ReleaseUrl = 'https://github.com/shinkuan/Akagi-MjaiBot-Mortal/releases/latest/download/release4p.zip'
 $UvUrl = 'https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-pc-windows-msvc.zip'
 $VoidShineModelUrl = 'https://huggingface.co/VoidShine/mortal-298k/resolve/main/mortal_298k.pth?download=true'
@@ -264,17 +268,24 @@ if ($Force -or -not $depsReady) {
     )
 }
 
-if (-not (Test-Path $SmokeTest)) { throw "Smoke-test script not found: $SmokeTest" }
-Write-Host '[INFO] Running Mortal model and JSONL round-trip smoke test...'
-Invoke-Checked $VenvPython @($SmokeTest, '--bot', $BotDir, '--timeout', '180')
+if (-not $SkipSmokeTest) {
+    if ([string]::IsNullOrWhiteSpace($SmokeTest) -or -not (Test-Path $SmokeTest)) {
+        throw "Smoke-test script not found under $Root"
+    }
+    Write-Host '[INFO] Running Mortal model and JSONL round-trip smoke test...'
+    Invoke-Checked $VenvPython @($SmokeTest, '--bot', $BotDir, '--timeout', '180')
+} else {
+    Write-Host '[INFO] Skipping smoke test (in-plugin first-run install).'
+}
 
 New-Item -ItemType Directory -Force -Path $Output | Out-Null
 Set-Content -Path (Join-Path $Output 'MORTAL_RUNTIME_PATH.txt') -Value $RuntimeRoot -Encoding UTF8
 Set-Content -Path (Join-Path $RuntimeRoot 'DOMAN_RUNTIME_VERSION.txt') -Value '0.8.0.89' -Encoding UTF8
 $pythonVersion = (Invoke-NativeCommand $VenvPython @('--version') -Quiet).Text
 $torchVersion = (Invoke-NativeCommand $VenvPython @('-c', 'import torch; print(torch.__version__)') -Quiet).Text
+$readyNote = if ($SkipSmokeTest) { 'Mortal runtime installed (smoke test skipped).' } else { 'Mortal runtime smoke test passed.' }
 Set-Content -Path (Join-Path $Output 'MORTAL_READY.txt') -Encoding UTF8 -Value @"
-Mortal runtime smoke test passed.
+$readyNote
 Runtime: $RuntimeRoot
 Python: $pythonVersion
 PyTorch: $torchVersion
