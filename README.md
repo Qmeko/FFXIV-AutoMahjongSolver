@@ -2,103 +2,68 @@
 
 [English](README.en.md)
 
-FFXIVのドマ式麻雀を読み取り、Mortal AIの判断を使って打牌・鳴き・リーチ・和了操作を行う、通常版とは分離されたDalamud開発者プラグインです。
+FFXIVのドマ式麻雀を読み取り、Mortal / Akochan の判断で打牌・鳴き・リーチ・和了を行う Dalamud プラグインです。
 
 元プロジェクト: [XeldarAlz/FFXIV-DomanMahjongSolver](https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver)
 
-## カスタムリポジトリからインストール
+## インストール
 
 1. `/xlsettings` を実行し、**試験的機能**タブを開く
-2. **カスタムプラグインリポジトリ** に次の URL を追加する:
+2. **カスタムプラグインリポジトリ** に次の URL を追加して有効化する
 
 ```
 https://raw.githubusercontent.com/Qmeko/DalamudPlugins/refs/heads/main/pluginmaster.json
 ```
 
 3. `/xlplugins` を実行し、**ドマ式麻雀ソルバー デバッグ版** をインストールする
+4. プラグインを有効にする
 
-初回起動時、Mortal AI が未導入なら自動でセットアップします（Python / PyTorch / 公開モデルのダウンロード。数分、数百MB）。Akochan は zip に同梱済みです。
+ソースのビルドや `BUILD_DEBUG_PLUGIN.bat` は不要です。
 
-## ワンクリック構築
+## 初回セットアップ
 
-1. ZIPを短いパスへ展開します。
-2. `BUILD_DEBUG_PLUGIN.bat`をダブルクリックします。
-3. BATが次を自動実行します。
-   - 利用可能な.NET 10 SDKの選択
-   - NuGet依存関係の復元
-   - `DomanMahjongSolverDebug.dll`のReleaseビルド
-   - Mortal 4人麻雀アダプターの取得
-   - uv管理のPython 3.12環境の作成
-   - CPU版PyTorchと必要パッケージの導入
-   - 実際のMortalモデルを使ったJSONL往復テスト
-4. 成功後、`OUTPUT\DEV_PLUGIN_DLL_PATH.txt`に書かれたDLLをDalamudのDev Plugin Locationsへ登録します。
+- **Akochan** はプラグインに同梱されています
+- **Mortal AI** は初回起動時に自動で導入されます（Python / PyTorch / 公開モデル。数分、数百MB）
+- チャットに進行状況が出ます。失敗したら設定画面の **判断AI** から再試行できます
 
-生成物:
-
-```text
-OUTPUT\DomanMahjongSolverDebug\DomanMahjongSolverDebug.dll
-OUTPUT\DomanMahjongSolverDebug-latest.zip
-OUTPUT\MORTAL_READY.txt
-OUTPUT\DEV_PLUGIN_DLL_PATH.txt
-```
-
-Mortalランタイムは次へ独立配置されます。
+保存先:
 
 ```text
 %LOCALAPPDATA%\DomanMahjongSolverDebug\MortalRuntime
 ```
 
-## Dalamudへの登録
+## 使い方
 
-```text
-/xlsettings
-→ Experimental
-→ Dev Plugin Locations
-→ OUTPUT\DEV_PLUGIN_DLL_PATH.txt のDLLを追加
-```
+1. `/mjdebug` で画面を開く
+2. 起動直後は安全のため **Hints（提案だけ）** になります
+3. 盤面と AI の接続を確認する
+4. 自動操作したいときだけ、メイン画面で Auto-play をオンにする
 
-`/xlplugins`で **Doman Mahjong Solver Debug** を有効化し、`/mjdebug`で画面を開きます。
+設定の **判断AI** で Mortal と Akochan を切り替えられます。
 
-デバッグ版は起動時に安全のためHints状態へ戻ります。盤面表示とMortal接続状態を確認した後、メイン画面でAuto-playを有効にします。
-
-## 自動処理
+## できること
 
 - 打牌
-- ポン
-- チーと候補形選択
-- 暗槓
-- 明槓
-- 加槓
+- ポン / チー（候補形の選択含む）
+- 暗槓 / 明槓 / 加槓
 - リーチと宣言牌
-- ロン
-- ツモ
+- ロン / ツモ
 - 鳴きの見送り
-- AI異常時の内蔵ヒューリスティックへのフォールバック
-
-Mortalとの通信は、1行につきmjaiイベント配列を1つ送信し、1行のアクションを受信するJSONL方式です。返答はFFXIV側の合法手と照合してから実行します。
 
 ## コマンド
 
 | コマンド | 内容 |
 |---|---|
 | `/mjdebug` | メイン画面を開閉 |
-| `/mjdebug pass <N>` | 鳴き候補の指定位置をデバッグ送信 |
-| `/mjdebug capture <label>` | 次のコールバックを記録 |
-| `/mjdebug variant dump` | クライアントレイアウト情報を出力 |
-| `/mjdebug snap <label>` | 現在の盤面スナップショットを保存 |
-| `/mjdebug autosnap on` | 状態変化の自動記録を開始 |
-| `/mjdebug autosnap off` | 自動記録を停止 |
 
 ## 注意点
 
-- Mortal公開リリースのローカルモデルを使用します。上位の非公開モデルと同等の強さではありません。
-- JP表示の鳴き・リーチ・ツモ・ロン文字列も認識対象へ追加しています。
-- FFXIVから取得できない相手副露・相手リーチなどの情報がある場合、Mortalへ渡る盤面は不完全になります。
-- 通常版とは内部名、DLL名、コマンド、設定、ログを分離しています。
-- 外部ツールと自動操作の利用にはゲーム規約上のリスクがあります。
+- Mortal は公開されているローカルモデルです。非公開の上位モデルと同じ強さではありません
+- 相手の副露やリーチなど、ゲームから取れない情報があるときは判断が不完全になります
+- 自動操作の利用にはゲーム規約上のリスクがあります
 
-詳細は`THIRD_PARTY_MORTAL.txt`を参照してください。
+第三者ランタイムの説明は `THIRD_PARTY_MORTAL.txt` と `THIRD_PARTY_AKOCHAN.txt` を参照してください。
 
 ## License
 
-元プロジェクトはAGPL-3.0-or-laterです。`LICENSE.md`を参照してください。
+元プロジェクトは AGPL-3.0-or-later です。`LICENSE.md` を参照してください。
