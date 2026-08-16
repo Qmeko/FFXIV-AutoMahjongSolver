@@ -97,7 +97,7 @@ Mortalとの通信は、1行につきmjaiイベント配列を1つ送信し、1�
 - 通常版とは内部名、DLL名、コマンド、設定、ログを分離しています。
 - 外部ツールと自動操作の利用にはゲーム規約上のリスクがあります。
 
-詳細は`ONE_CLICK_BUILD_README_JP.txt`、`MODIFICATION_SUMMARY.md`、`THIRD_PARTY_MORTAL.txt`を参照してください。
+詳細は`THIRD_PARTY_MORTAL.txt`を参照してください。
 
 ## License
 
