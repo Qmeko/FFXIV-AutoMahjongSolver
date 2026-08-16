@@ -1,7 +1,0 @@
-v0.8.0.48
-
-- Tracks opponent discard-count deltas continuously.
-- Uses the exact latest opponent actor+tile as the live call-offer key.
-- Does not trust reconstructed candidate FromSeat values for call prompt identity.
-- Still requires the live Pon/Chi/Kan candidate surface to contain the same claimed tile.
-- Prevents permanent "waiting for an unambiguous call offer" when the UI visibly offers Pon/Chi/Kan/Pass.

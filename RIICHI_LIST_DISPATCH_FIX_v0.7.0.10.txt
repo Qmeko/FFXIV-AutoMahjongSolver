@@ -1,5 +1,0 @@
-Doman Mahjong Solver Debug v0.7.0.10
-
-- Riichi/Pass list prompts now use only AtkComponentList.SelectItem(option, dispatchEvent: true).
-- Removed the extra FireCallback([11, option]) that could overwrite or cancel the native list selection.
-- Classic Pon/Chi/Kan/Ron/Pass button-row prompts continue to use opcode 11.

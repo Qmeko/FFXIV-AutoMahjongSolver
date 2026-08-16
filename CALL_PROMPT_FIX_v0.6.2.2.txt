@@ -1,6 +1,0 @@
-Doman Mahjong Solver Debug v0.6.2.3
-
-- Fixed call prompts becoming stuck when Mortal reports "waiting for a new event".
-- On a legal Chi/Pon/Kan/Ron prompt that also permits Pass, a pending non-decision is resolved as auto-pass.
-- Discard-phase pending behavior is unchanged.
-- Existing humanized call/pass delay remains active.

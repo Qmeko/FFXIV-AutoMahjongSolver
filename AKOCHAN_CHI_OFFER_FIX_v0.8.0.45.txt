@@ -1,6 +1,0 @@
-Doman Mahjong Solver Debug v0.8.0.45
-
-- Chi offer actor is derived from the rules-mandated upstream seat.
-- Duplicate or transient EMJ FromSeat values no longer block a unique Chi instruction.
-- Multiple consumed-tile patterns for the same claimed tile remain one offer.
-- A genuinely conflicting claimed tile is still rejected instead of guessed.

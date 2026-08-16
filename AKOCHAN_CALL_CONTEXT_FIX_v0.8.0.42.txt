@@ -1,7 +1,0 @@
-v0.8.0.42
-
-- Preserve the original ordered mjai batch for call decisions.
-- Repair only the stale final offered tile instead of rebuilding start_kyoku from the current hand.
-- Refuse inaccurate stateless call queries when no ordered opponent offer can be aligned.
-- Convert plugin-relative call candidate seats to absolute mjai seats when mapping responses.
-- Keep the tracker baseline aligned with the corrected offered tile.

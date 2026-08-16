@@ -1,7 +1,0 @@
-Doman Mahjong Solver Debug + Mortal AI v0.3.0.2
-
-Fixed:
-- Windows PowerShell 5.1 no longer treats successful native stderr output as a fatal NativeCommandError.
-- `uv python install 3.12` may print "Python 3.12 is already installed" to stderr while returning exit code 0; this is now accepted correctly.
-- Native command output is captured, replayed into BUILD_DEBUG_PLUGIN.log, and judged only by exit code.
-- The same protection now covers uv, Python, curl, dotnet, and the Mortal smoke test.

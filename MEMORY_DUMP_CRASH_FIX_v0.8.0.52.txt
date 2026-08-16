@@ -1,8 +1,0 @@
-v0.8.0.52 - Memory dump crash fix
-
-- Disabled MemoryDumpRecorder raw native-memory copying.
-- Removed state-change/input-pre/input-post memory-dump subscriptions.
-- Retained structured AddonLifecycle, Agent event, AtkValue, UI state,
-  AI communication, decision, dispatch and execution trace logging.
-- No Marshal.Copy or arbitrary Addon/Agent byte-range dump is performed by
-  MemoryDumpRecorder.

@@ -1,9 +1,0 @@
-Doman Mahjong Solver Debug v0.8.0.64
-
-AI指示表示の高速化
-
-- Mortal/Akochan計算中の16ms再評価で、内蔵AIフォールバックを毎回再計算していた処理を廃止。
-- 内蔵AI判断は、新しい外部AI要求を実際にキューへ投入するとき、または本当にフォールバックが必要なときだけ1回生成。
-- AI要求ごとに専用OSスレッドを新規作成する LongRunning を廃止し、永続AIプロセスへの直列I/OをThreadPoolで実行。
-- 外部AIのmjai入力、判断内容、合法手判定、キャッシュ、Mortal/Akochan切替は変更なし。
-- Retry、Sleep、Stickyフラグは追加していない。

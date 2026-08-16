@@ -1,7 +1,0 @@
-v0.6.0.0
-
-- Reads visible river tile faces from the Emj/EmjL addon node tree.
-- Maps bottom/right/top/left rivers to self/shimocha/toimen/kamicha.
-- Orders multi-row rivers from the centre outward.
-- Keeps memory-based discard counts authoritative and only overlays decoded tiles.
-- Leaves existing Mortal session, calls, and fallback behavior unchanged.

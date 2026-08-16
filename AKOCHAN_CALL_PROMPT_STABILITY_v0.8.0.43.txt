@@ -1,7 +1,0 @@
-Doman Mahjong Solver Debug v0.8.0.43
-
-- Discard-capable 14-tile self-turn surfaces are no longer misrouted as opponent call prompts when stale Chi/Pon labels remain visible.
-- Akochan call queries require a stable, unique actor+tile offer on consecutive snapshots.
-- When the call modal appears before the river increment, the exact live actor+tile event is appended to the synchronized session instead of falling back or rebuilding start_kyoku.
-- Call responses no longer match by tile alone; the source actor must also match.
-- No changes to normal discard evaluation, Best Move, or Top 3.

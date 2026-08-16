@@ -1,4 +1,0 @@
-v0.8.0.49
-
-Fixed CS0103 in Mahjong.Plugin.Dalamud/ExternalAi/ExternalMjaiProcess.cs.
-The liveCallKey variable is now resolved by TryGetUniqueLiveCallOfferKey before it is parsed and used to repair the authoritative call prompt batch.

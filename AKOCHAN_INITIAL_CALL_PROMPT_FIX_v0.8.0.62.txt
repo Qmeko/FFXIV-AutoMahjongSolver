@@ -1,6 +1,0 @@
-Doman Mahjong Solver Debug v0.8.0.64
-
-- Akochan開始時にコール画面がすでに開いている場合、公開河スナップショットから直前打牌を復元。
-- チーのみの画面では上家の最終打牌だけを対象にして一意確定。
-- 未選択AI、Retry、Sleep、Stickyは追加していない。
-- 重複していた「Akochan pending」表示を修正。

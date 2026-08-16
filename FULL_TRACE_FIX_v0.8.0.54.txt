@@ -1,7 +1,0 @@
-v0.8.0.55
-- Session logs are written under J:\FFXIV-AutoMahjongSolver\Log\yyyy-MM-dd_HH-mm-ss.
-- Added complete call decision tracing from snapshot through policy, gates, queue, legality recheck, dispatch path and FireCallback/list selection.
-- Added candidate-set serialization for Pon/Chi/Kan.
-- Added exception containment around call policy and dispatch.
-- Fixed repeated HandDecomposer exception by skipping tsumo scoring unless closed tiles + meld tiles total 14.
-- Raw unrestricted memory scanning remains disabled.

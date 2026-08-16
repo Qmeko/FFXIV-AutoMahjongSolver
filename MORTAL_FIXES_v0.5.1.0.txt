@@ -1,9 +1,0 @@
-Doman Mahjong Solver Debug v0.5.1.0
-
-Fixed:
-- Valid Mortal dahai replies were rejected because EMJ exposes DiscardableTiles as an empty list.
-- A rejected reply killed Mortal, causing "waiting for the next fresh hand" for the rest of the hand.
-- Closed-hand sessions can now recover from the current 13/14-tile snapshot after process restart.
-
-Not yet solved:
-- Opponent river tile identities, opponent melds, riichi flags, real seats, honba and kyotaku still require EMJ Addon/memory reverse engineering.

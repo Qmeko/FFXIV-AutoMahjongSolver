@@ -1,8 +1,0 @@
-Doman Mahjong Solver Debug v0.6.2.6
-
-Best Move UI update:
-- Displays Mortal decisions for Discard, Pass, Riichi, Chi, Pon, all Kan variants, Ron and Tsumo.
-- Non-discard decisions no longer disappear when no discard-score list exists.
-- Displays meld tiles for Chi/Pon/Kan decisions.
-- Displays the current legal action flags below Best Move.
-- Keeps the existing Last action dispatch status.

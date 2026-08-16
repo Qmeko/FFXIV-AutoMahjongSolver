@@ -1,5 +1,0 @@
-v0.8.0.96
-- Keep the exact committed Chi/Pon/Kan until its MJAI event is proven emitted.
-- Prevent a post-call 11/8/5/2-tile discard surface from being synthesized as tsumo when the call event is the decision boundary.
-- Deduplicate own meld events by the event actually sent, not by the latest FFXIV snapshot.
-- Prevent libriichi fifth-tile rule violations and events=0 loops after an accepted call.

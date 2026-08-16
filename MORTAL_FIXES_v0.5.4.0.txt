@@ -1,9 +1,0 @@
-v0.5.4.0
-
-- start_kyoku always sends exactly 13 concealed tiles.
-- The 14th tile is sent only as a tsumo event.
-- Implements mjai two-step riichi handshake: reach -> dahai.
-- Maps the follow-up discard into one FFXIV Riichi action.
-- Explicit Mortal pass/none is no longer overridden by the built-in riichi probe.
-- Keeps call/pass/pon/chi/kan/hora mapping and stale-decision guards.
-- Retains invalid-tile validation and JSONL trace files.

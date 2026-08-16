@@ -1,8 +1,0 @@
-Doman Mahjong Solver Debug v0.8.0.64
-
-修正内容
-- 日本語EMJで「パス」だけ先に読めるコール画面を有効な操作面として認識
-- state=15/legal=Noneで停止していた経路を修正
-- Pass単独のコール画面もAutoPlayLoopの判断対象へ追加
-- Pon/Chi/Kan/Ron/Riichi/Tsumoの既存Dispatch経路を維持
-- 打牌後の一時的なstate=15は、表示中のPassまたは受諾項目がない限り操作しない

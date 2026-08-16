@@ -1,7 +1,0 @@
-v0.5.5.0
-
-- Fixes missed riichi opportunities when the EMJ addon reports only Discard.
-- Derives legal riichi discard tiles from shanten after each possible discard.
-- Requires a closed hand (concealed kans allowed), at least 1000 points, and at least four live-wall tiles.
-- Adds Riichi to LegalActions and restricts the riichi discard to tiles that leave tenpai.
-- Keeps the existing Mortal reach -> dahai handshake and AutoPlay riichi confirmation flow.

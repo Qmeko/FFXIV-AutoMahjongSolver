@@ -1,7 +1,0 @@
-Doman Mahjong Solver Debug v0.8.0.91
-
-- VoidShine/mortal-298kの実使用判定を追加
-- Install-MortalRuntime.ps1がMORTAL_MODEL_MANIFEST.jsonを生成
-- Mortal起動時にactive mortal.pthをSHA-256再計算
-- model=VoidShine/mortal-298k, checkpoint=298000, size/hash一致時のみstatus=VERIFIED_298K
-- 不一致・manifest欠落・ファイル欠落を明示ログ化

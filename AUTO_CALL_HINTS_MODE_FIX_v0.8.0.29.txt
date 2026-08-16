@@ -1,5 +1,0 @@
-v0.8.0.29
-- Automatic call handling now runs while Mode=Hints when Enable automatic calls is enabled.
-- Hints mode remains blocked from automatic discard, riichi, win, and hand-result advance.
-- Pass/Pon/Chi/Daiminkan/Ankan/Kakan retain independent switches and delays.
-- AutoPlayLoop gate logging now includes auto_calls state.

@@ -1,9 +1,0 @@
-﻿v0.8.0.33
-
-- Only the selected AI provider is queued for live decisions.
-- Prevents native Akochan from consuming all eight search threads while Mortal or Built-in is selected.
-- Uses a dedicated long-running highest-priority worker for external AI decisions instead of a shared ThreadPool worker.
-- Adds [AILatency] queue/process-lock/core timing to identify actual model time separately from scheduling delay.
-- Does not alter AI choices, legal-action mapping, Best Move, Top 3, or automatic-call timing.
-
-Build fix: convert HumanTiming.RandomRange TimeSpan to milliseconds before assigning to int.

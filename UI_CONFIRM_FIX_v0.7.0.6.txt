@@ -1,7 +1,0 @@
-Doman Mahjong Solver Debug v0.7.0.6
-
-- Call/Riichi/Pass prompts are no longer considered complete merely because a callback returned Ok.
-- The plugin now checks whether the original prompt remains visible.
-- If still visible, the same option is confirmed up to three times at 180/420/800 ms intervals.
-- Retries require the same state, legal-action surface, and hand count to avoid clicking a newer prompt.
-- Added explicit logs for prompt closure and each confirmation retry.

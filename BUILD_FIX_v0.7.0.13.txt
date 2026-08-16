@@ -1,6 +1,0 @@
-Doman Mahjong Solver Debug v0.7.0.13
-
-Build fix:
-- Added ActionStateMachine.Reset().
-- Reset clears in-flight dispatch, retry context, riichi confirmation latch, and wall observation state.
-- Fixes CS1061 in AutoPlayLoop.cs when auto-play is stopped on a legal Riichi prompt.

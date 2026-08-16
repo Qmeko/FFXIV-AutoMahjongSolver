@@ -1,6 +1,0 @@
-Doman Mahjong Solver Debug v0.6.2.4
-
-- Fixed Riichi/Pass self-declare popup being misrouted through opcode 11.
-- State 6 now uses the native AtkComponentList SelectItem path before label detection.
-- State 15 Pon/Chi/Kan/Ron/Pass prompts keep the existing opcode-11 path.
-- Prevents auto-pass reporting Ok while the Riichi/Pass popup remains visible.

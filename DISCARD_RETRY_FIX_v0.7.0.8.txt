@@ -1,6 +1,0 @@
-Doman Mahjong Solver Debug v0.7.0.8
-
-- Removed the 10-second duplicate-fingerprint suppression from live discard surfaces.
-- A repeated discard is now retried whenever the same tile is still present and Discard remains legal.
-- The existing live snapshot and legality checks remain the safety gate, preventing a second tile from being discarded after the first action is accepted.
-- Fixes stalls showing: discard suppressed: duplicate action fingerprint.

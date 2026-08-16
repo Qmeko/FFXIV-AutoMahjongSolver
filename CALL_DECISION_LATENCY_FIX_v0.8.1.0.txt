@@ -1,6 +1,0 @@
-Doman Mahjong Solver Debug v0.8.1.0
-
-- Recover a missing live call tile from the source seat public river.
-- Build the first Mortal Pon/Chi/Kan decision batch immediately.
-- Avoid the delayed 85-event whole-round replay that could discard from a void hand.
-- Preserve Mortal 298k, post-call recovery, and hint-mode behavior.

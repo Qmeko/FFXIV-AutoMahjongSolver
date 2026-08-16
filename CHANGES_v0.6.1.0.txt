@@ -1,9 +1,0 @@
-Doman Mahjong Solver Debug v0.6.1.0
-
-- Expanded visual river reader to scan direct image nodes and nested component image nodes.
-- Added coordinate scaling and revised seat/river ordering.
-- Detects sideways river tiles as riichi declarations and records declaration index.
-- Added VisualPublicState diagnostic output for decoded candidate counts per seat.
-- Added detailed RiichiCheck logging with legal flag, candidates, source and Mortal choice.
-- Treats Mortal waiting/synchronization states as pending and does not switch to built-in fallback.
-- Keeps existing persistent mjai session, call, pon/chi/kan and discard synchronization.

@@ -1,8 +1,0 @@
-Doman Mahjong Solver Debug v0.6.2.1
-
-Crash fix:
-- Disabled AgentEmjPublicStateProbe runtime invocation.
-- The previous probe used Marshal.Copy over a guessed 0x4000-byte AgentEmj range.
-- This could cross an unreadable memory page and terminate the .NET runtime/FFXIV.
-- Mahjong play and Mortal integration remain enabled.
-- Public-state reverse engineering is paused until a bounded, validated structure is available.
