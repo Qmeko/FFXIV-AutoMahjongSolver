@@ -1,8 +1,8 @@
 ﻿{
-    "Author": "XeldarAlz / デバッグ派生版",
-    "Name": "ドマ式麻雀ソルバー デバッグ版",
-    "Punchline": "Mortal／Akochanの判断で自動操作。Mortalは初回起動時に自動セットアップ。",
-    "Description": "日本語クライアント対応。Mortal／Akochanを設定で切り替え、打牌・リーチ・パス・チー・ポン・カン・ロン・ツモの判断表示と自動操作を行います。Mortalは初回起動時に自動セットアップされます。Akochanは高速（リアルタイム）／精度優先を選択できます。",
+    "Author": "XeldarAlz / debug fork",
+    "Name": "Doman Mahjong Solver Debug",
+    "Punchline": "Mortal / Akochan suggestions and auto-play. Mortal installs on first launch.",
+    "Description": "Reads Doman Mahjong and uses Mortal or Akochan for discard, riichi, pass, chi, pon, kan, ron, and tsumo. Mortal is installed automatically on first launch. Akochan can run in realtime or precision mode.",
     "AssemblyVersion": "0.8.1.25",
     "DalamudApiLevel": 15,
     "ApplicableVersion": "any",

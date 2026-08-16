@@ -1,7 +1,7 @@
-[
+﻿[
   {
     "Author": "XeldarAlz",
-    "Name": "ドマ式麻雀ソルバー デバッグ版",
+    "Name": "Doman Mahjong Solver Debug",
     "InternalName": "DomanMahjongSolverDebug",
     "AssemblyVersion": "0.8.1.25",
     "TestingAssemblyVersion": "0.8.1.25",
@@ -22,8 +22,8 @@
       "Utility"
     ],
     "IconUrl": "https://raw.githubusercontent.com/XeldarAlz/FFXIV-DomanMahjongSolver/main/Mahjong.Plugin.Dalamud/Images/Icon.png",
-    "Punchline": "Mortalの最善手とAkochanの比較助言を表示します。",
-    "Description": "日本語クライアント対応。Mortalの最善手、Top 3、Akochan比較、打牌・リーチ・パス・チー・ポン・カン・ロン・ツモの判断を表示します。",
+    "Punchline": "Mortal / Akochan suggestions and auto-play. Mortal installs on first launch.",
+    "Description": "Reads Doman Mahjong and uses Mortal or Akochan for discard, riichi, pass, chi, pon, kan, ron, and tsumo. Mortal is installed automatically on first launch. Akochan can run in realtime or precision mode.",
     "Changelog": "v0.8.1.17: 捨てた牌と同じ牌をツモった際に自分の手番でAI指示が止まる問題を修正（壁残数を根拠に手牌確定待ちを解除してツモを送信）。全過去ログのリプレイ検証済み。",
     "DownloadCount": 0,
     "DownloadLinkInstall": "https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver/releases/latest/download/latest.zip",

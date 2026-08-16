@@ -1,69 +1,69 @@
 # Doman Mahjong Solver Debug + Mortal AI
 
-[English](README.en.md)
+[日本語](README.ja.md)
 
-FFXIVのドマ式麻雀を読み取り、Mortal / Akochan の判断で打牌・鳴き・リーチ・和了を行う Dalamud プラグインです。
+A Dalamud plugin that reads Doman Mahjong and uses Mortal / Akochan for discard, calls, riichi, and win actions.
 
-元プロジェクト: [XeldarAlz/FFXIV-DomanMahjongSolver](https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver)
+Original project: [XeldarAlz/FFXIV-DomanMahjongSolver](https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver)
 
-## インストール
+## Install
 
-1. `/xlsettings` を実行し、**試験的機能**タブを開く
-2. **カスタムプラグインリポジトリ** に次の URL を追加して有効化する
+1. Run `/xlsettings` and open the **Experimental** tab
+2. Add this URL under **Custom Plugin Repositories** and enable it
 
 ```
 https://raw.githubusercontent.com/Qmeko/DalamudPlugins/refs/heads/main/pluginmaster.json
 ```
 
-3. `/xlplugins` を実行し、**ドマ式麻雀ソルバー デバッグ版** をインストールする
-4. プラグインを有効にする
+3. Run `/xlplugins` and install **Doman Mahjong Solver Debug**
+4. Enable the plugin
 
-ソースのビルドや `BUILD_DEBUG_PLUGIN.bat` は不要です。
+You do not need to build from source.
 
-## 初回セットアップ
+## First-run setup
 
-- **Akochan** はプラグインに同梱されています
-- **Mortal AI** は初回起動時に自動で導入されます（Python / PyTorch / 公開モデル。数分、数百MB）
-- チャットに進行状況が出ます。失敗したら設定画面の **判断AI** から再試行できます
+- **Akochan** is included in the plugin zip
+- **Mortal AI** is downloaded automatically on first launch (Python / PyTorch / the public model; several minutes, a few hundred MB)
+- Progress is printed in chat. If it fails, retry from **AI Provider** in Settings
 
-保存先:
+Runtime location:
 
 ```text
 %LOCALAPPDATA%\DomanMahjongSolverDebug\MortalRuntime
 ```
 
-## 使い方
+## Usage
 
-1. `/mjdebug` で画面を開く
-2. 起動直後は安全のため **Hints（提案だけ）** になります
-3. 盤面と AI の接続を確認する
-4. 自動操作したいときだけ、メイン画面で Auto-play をオンにする
+1. Open the window with `/mjdebug`
+2. The plugin starts in **Hints** mode for safety
+3. Check the board readout and AI connection
+4. Turn on Auto-play only when you want automatic actions
 
-設定の **判断AI** で Mortal と Akochan を切り替えられます。
+Switch between Mortal and Akochan in Settings.
 
-## できること
+## Features
 
-- 打牌
-- ポン / チー（候補形の選択含む）
-- 暗槓 / 明槓 / 加槓
-- リーチと宣言牌
-- ロン / ツモ
-- 鳴きの見送り
+- Discards
+- Pon / chi (including shape selection)
+- Closed / open / added kans
+- Riichi and the declared tile
+- Ron / tsumo
+- Passing on calls
 
-## コマンド
+## Commands
 
-| コマンド | 内容 |
+| Command | Description |
 |---|---|
-| `/mjdebug` | メイン画面を開閉 |
+| `/mjdebug` | Toggle the main window |
 
-## 注意点
+## Notes
 
-- Mortal は公開されているローカルモデルです。非公開の上位モデルと同じ強さではありません
-- 相手の副露やリーチなど、ゲームから取れない情報があるときは判断が不完全になります
-- 自動操作の利用にはゲーム規約上のリスクがあります
+- Mortal uses a public local model. It is not as strong as private top-tier models
+- Hidden information such as opponent melds or riichi can make the board incomplete
+- Automatic play may violate the game terms of service
 
-第三者ランタイムの説明は `THIRD_PARTY_MORTAL.txt` と `THIRD_PARTY_AKOCHAN.txt` を参照してください。
+See `THIRD_PARTY_MORTAL.txt` and `THIRD_PARTY_AKOCHAN.txt` for third-party runtime notes.
 
 ## License
 
-元プロジェクトは AGPL-3.0-or-later です。`LICENSE.md` を参照してください。
+The original project is AGPL-3.0-or-later. See `LICENSE.md`.
