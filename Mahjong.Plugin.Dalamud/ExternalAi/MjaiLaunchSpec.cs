@@ -83,6 +83,8 @@ internal static class MortalRuntimeLocator
             if (!HasRequiredFiles(root))
                 continue;
 
+            string python = Path.Combine(root, "venv", "Scripts", "python.exe");
+            string bot = Path.Combine(root, "bot", "bot.py");
             string configDirectory = Path.Combine(root, "config");
             Directory.CreateDirectory(configDirectory);
             string configPath = Path.Combine(configDirectory, "doman-mortal.json");
