@@ -1,0 +1,18 @@
+Third-party Mortal runtime
+==========================
+
+BUILD_DEBUG_PLUGIN.bat downloads the current release asset named release4p.zip
+from:
+  https://github.com/shinkuan/Akagi-MjaiBot-Mortal
+
+That adapter wraps Mortal/libriichi and is distributed separately by its
+maintainer. The installer also downloads uv from:
+  https://github.com/astral-sh/uv
+
+The public release currently includes a small public/local model intended to
+make the integration usable and testable. It is not represented here as the
+strongest available Mortal model. This source ZIP does not redistribute the
+Mortal runtime, PyTorch, uv, or model weights; the BAT retrieves them from their
+respective upstream release/package sources on the user's machine.
+
+Review each upstream project's license before redistribution.

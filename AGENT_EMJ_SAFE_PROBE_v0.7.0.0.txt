@@ -1,0 +1,20 @@
+Doman Mahjong Solver Debug v0.7.0.0
+
+Purpose
+- Safely inspect AgentEmj without fixed-size blind Marshal.Copy.
+- Avoid crossing unreadable/guard pages that previously crashed FFXIV.
+
+Command
+/mjdebug agentprobe
+
+Output
+Plugin config directory\agent-emj-safe-probe-YYYYMMDD-HHMMSS.txt
+
+Recommended captures
+1. Immediately after the hand starts.
+2. After one opponent discard.
+3. While a Pon/Chi/Pass prompt is visible.
+4. While a Riichi/Pass prompt is visible.
+5. After an opponent calls Pon/Chi/Kan.
+
+The command captures only VirtualQuery-confirmed readable ranges.

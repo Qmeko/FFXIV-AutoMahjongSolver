@@ -1,0 +1,6 @@
+Doman Mahjong Solver Debug v0.7.0.4
+
+- Riichi declarations are dispatched immediately instead of waiting the normal 3-4 second human delay.
+- A pending Riichi choice is valid only while the Riichi legal flag or the state-6 self-declare popup is present.
+- Prevents a Riichi choice from surviving into state 15 and degrading into an ordinary discard.
+- Note: when Mortal itself chooses Dahai/Discard over Reach, the plugin intentionally does not force Riichi.

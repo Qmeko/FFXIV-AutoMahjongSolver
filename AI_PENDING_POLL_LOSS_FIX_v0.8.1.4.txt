@@ -1,0 +1,6 @@
+Doman Mahjong Solver Debug v0.8.1.4
+
+- Keeps the external-AI pending sentinel when no authoritative decision exists yet.
+- StateAggregator therefore continues 16 ms policy polling on an unchanged board.
+- Fixes the permanent "Waiting for a decision" state after Mortal finishes in the background.
+- Existing authoritative instruction retention remains unchanged.

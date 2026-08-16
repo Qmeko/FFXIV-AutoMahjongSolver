@@ -1,0 +1,8 @@
+Doman Mahjong Solver Debug v0.7.0.12
+
+Emergency stabilization:
+- Removed sticky Riichi reuse across snapshots.
+- Auto-play is immediately disarmed whenever current LegalActions contains Riichi.
+- No automatic Riichi, discard, call, pass or retry is sent after the stop.
+- Stale Riichi recommendations are hidden when Riichi is not legal.
+- User must handle the Riichi decision manually and re-enable Auto-play afterward.

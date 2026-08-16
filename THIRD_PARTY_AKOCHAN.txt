@@ -1,0 +1,21 @@
+Third-party Akochan runtime
+===========================
+
+This comparison build includes an unmodified Akochan AI engine built from:
+  https://github.com/critter-mj/akochan
+
+Akochan is used only as a separate advice process. Its decision is displayed
+for comparison and is never sent to the FFXIV input dispatcher.
+
+The upstream ai_src sources and parameter files are not modified. The bundled
+akochan_pipe.exe statically links those AI sources with a minimal stdin/stdout
+host in third-party/AkochanHostSource. The host preserves Akochan's upstream "pipe" protocol and adds standard-mjai
+start_game normalization. It also treats the player's completed Chi/Pon event
+as an actionable boundary, which is required by mjai because the mandatory
+post-call discard occurs without a following tsumo event.
+
+The upstream usage and redistribution terms are included at:
+  third-party/AkochanRuntime/LICENSE
+
+MinGW runtime libraries shipped beside akochan_pipe.exe originate from
+MSYS2/MinGW-w64.

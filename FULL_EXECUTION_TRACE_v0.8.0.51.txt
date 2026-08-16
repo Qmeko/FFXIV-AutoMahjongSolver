@@ -1,0 +1,6 @@
+v0.8.0.51 日本語クライアント・フック再取得用ログビルド
+
+- Dalamud公開サービス、FFXIVClientStructs、プラグイン所有状態の範囲のみ
+- full-trace/FULL_EXECUTION_TRACE_*.jsonl に毎フレームのゲート、スナップショット、合法手、AI判断、Dispatch経路を記録
+- 既存のAgent/Addon/FireCallback/AtkValue/メモリ差分ログも継続
+- 自動プレイ処理の仕様変更は行わない

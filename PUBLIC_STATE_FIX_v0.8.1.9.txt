@@ -1,0 +1,18 @@
+Doman Mahjong Solver Debug v0.8.1.9
+
+Public-state completeness fixes
+
+Critical 1 — River merge
+- PublicRiverMerger combines a visual/existing river prefix with a shorter
+  AtkValue code-8 event tail (mid-hand plugin load case).
+- VisualPublicStateReader now keeps partial rivers instead of only complete ones.
+- AddonEmjAtkValueProbe.ApplyPublicState merges instead of skipping incomplete tails.
+
+Critical 2 — Opponent meld estimation
+- VisualPublicStateReader scans an outer face-up band (and river leftovers) per seat.
+- OpponentMeldEstimator approximates Pon / Chi / MinKan from those tiles.
+- Seat 0 melds remain owned by MeldTracker / OurMelds.
+
+Idle reading is unchanged: StateAggregator continues to rebuild snapshots.
+
+Output: J:\FFXIV-AutoMahjongSolver\DMS_v0.8.1.9

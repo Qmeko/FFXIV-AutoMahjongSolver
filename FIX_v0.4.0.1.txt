@@ -1,0 +1,9 @@
+Doman Mahjong Solver Debug + Mortal AI v0.4.0.1
+
+Fix:
+- Registered ConfigMigratorV4ToV5 in Plugin startup.
+- Existing schema v4 configuration now migrates to schema v5.
+- Updated migration integration tests to cover the complete 0 -> 5 chain.
+
+This fixes plugin load failure:
+No migrator registered from version 4. Registered: [0->1, 1->2, 2->3, 3->4].

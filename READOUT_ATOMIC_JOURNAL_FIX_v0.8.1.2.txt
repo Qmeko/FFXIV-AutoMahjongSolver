@@ -1,0 +1,7 @@
+Doman Mahjong Solver Debug v0.8.1.2
+
+- AgentEmj確定イベントを捨て牌取得の起点に変更し、直後の盤面で牌を検証
+- 鳴き対象牌・捨てた席・合法手を原子的なCallOfferSnapshotとして保持
+- Mortal/Akochan共通の順序付きMJAIジャーナルを局開始から保持
+- AI再生成時は推定履歴ではなく保持済みジャーナルを再生
+- pending/再同期中の確定済みAI指示保持はv0.8.1.1から維持

@@ -1,0 +1,6 @@
+Doman Mahjong Solver Debug v0.7.0.7
+
+- Fixed AutoPlay stopping on state=19 with hand=14 and legal=Discard.
+- Duplicate-action suppression is bypassed only for state 19/28 list-widget discard transitions.
+- Ordinary discard duplicate protection remains enabled.
+- Repeated list-widget dispatch is logged explicitly.

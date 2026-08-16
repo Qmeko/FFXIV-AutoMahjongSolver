@@ -1,0 +1,6 @@
+v0.8.0.48
+
+- Uses the latest ordered concrete opponent discard as the authoritative call offer when the visible Pon/Chi/Kan prompt appears before EMJ candidate metadata stabilizes.
+- Passes the resolved actor and tile directly into the ordered mjai batch repair path.
+- Prevents indefinite "waiting for an unambiguous call offer" when candidate rows are empty, duplicated, or delayed.
+- Keeps the existing ordered river, meld, riichi and dora history; no stateless start_kyoku rebuild.

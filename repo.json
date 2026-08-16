@@ -1,0 +1,40 @@
+﻿[
+  {
+    "Author": "XeldarAlz",
+    "Name": "ドマ式麻雀ソルバー デバッグ版",
+    "InternalName": "DomanMahjongSolverDebug",
+    "AssemblyVersion": "0.8.1.17",
+    "TestingAssemblyVersion": "0.8.1.17",
+    "IsTestingExclusive": false,
+    "RepoUrl": "https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 15,
+    "TestingDalamudApiLevel": 15,
+    "MinimumDalamudVersion": null,
+    "Tags": [
+      "mahjong",
+      "doman",
+      "gold-saucer",
+      "ai",
+      "automation"
+    ],
+    "CategoryTags": [
+      "Utility"
+    ],
+    "IconUrl": "https://raw.githubusercontent.com/XeldarAlz/FFXIV-DomanMahjongSolver/main/Mahjong.Plugin.Dalamud/Images/Icon.png",
+    "Punchline": "Mortalの最善手とAkochanの比較助言を表示します。",
+    "Description": "日本語クライアント対応。Mortalの最善手、Top 3、Akochan比較、打牌・リーチ・パス・チー・ポン・カン・ロン・ツモの判断を表示します。",
+    "Changelog": "v0.8.1.17: 捨てた牌と同じ牌をツモった際に自分の手番でAI指示が止まる問題を修正（壁残数を根拠に手牌確定待ちを解除してツモを送信）。全過去ログのリプレイ検証済み。",
+    "DownloadCount": 1836,
+    "DownloadLinkInstall": "https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver/releases/latest/download/latest.zip",
+    "DownloadLinkTesting": "https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver/releases/latest/download/latest.zip",
+    "DownloadLinkUpdate": "https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver/releases/latest/download/latest.zip",
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "CanUnloadAsync": false,
+    "LoadPriority": 0,
+    "ImageUrls": [],
+    "AcceptsFeedback": true,
+    "LastUpdate": "1785429105"
+  }
+]

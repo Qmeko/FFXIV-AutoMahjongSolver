@@ -1,0 +1,7 @@
+Doman Mahjong Solver Debug v0.5.7.0
+
+- start_game is now emitted once per Mortal process/table session.
+- Incomplete public rivers trigger start_kyoku resync without resetting start_game.
+- EMJ states 6, 22 and 30 share one discard dispatch context.
+- Duplicate action fingerprints ignore transient addon state and use a 10-second guard.
+- Existing riichi reach->dahai handling is preserved.

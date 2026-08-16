@@ -1,0 +1,6 @@
+Doman Mahjong Solver Debug v0.6.2.5
+
+- Prevents permanent waits when Mortal reports "waiting for a new event" on an active decision surface.
+- Uses the built-in policy for only that single visible choice, then returns to Mortal on the next fresh mjai event.
+- Covers Riichi second-stage discard selection, ordinary discard, and any legal prompt that would otherwise remain stuck.
+- Corrects the embedded assembly/package version to 0.6.2.5.

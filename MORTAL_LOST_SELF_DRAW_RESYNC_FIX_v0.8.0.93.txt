@@ -1,0 +1,6 @@
+Doman Mahjong Solver Debug v0.8.0.93
+
+Fix:
+- Prevent Mortal type=none from consuming an opponent-only batch while FFXIV is waiting for our 14-tile discard.
+- If the ordered tracker has lost the self-draw boundary, rebuild the current closed round and request the discard immediately.
+- Prevent the subsequent events=0 / STUCK loop.

@@ -1,0 +1,8 @@
+Doman Mahjong Solver Debug v0.5.8.0
+
+- Keep the active Mortal session when public river tile IDs are incomplete.
+- Echo the plugin-selected own discard into mjai when EMJ only exposes discard counts.
+- Echo the concrete opponent discard shown by Pon/Chi/Kan call prompts.
+- Send Pon/Chi/Kan transitions instead of dropping to stateless fallback after an open meld.
+- Reconstruct Pon/daiminkan/kakan consumed tiles when EMJ meld Tiles is temporarily empty.
+- Preserve existing riichi reach -> dahai handling and duplicate-action suppression.

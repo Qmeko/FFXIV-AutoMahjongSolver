@@ -1,0 +1,8 @@
+Doman Mahjong Solver Debug v0.8.0.64
+
+修正:
+- Akochan応答 none をライブのPass指示として即時確定
+- ライブのコールUIで Pass が公開済みの場合、Pon/Chi/Kan応答をDeferredへ送らず即時Dispatch
+- EMJで不安定な候補FromSeat照合だけを理由にコール応答を保留しない
+- 未表示のコールUIに対してのみDeferredを使用
+- 打牌処理およびAI排他起動は変更なし

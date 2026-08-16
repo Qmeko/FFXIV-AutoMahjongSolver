@@ -1,0 +1,6 @@
+Doman Mahjong Solver Debug v0.8.0.46
+
+Fix:
+- Do not require CallModalHost visibility when the visible list widget already contains Pon/Chi/Kan/Ron/Riichi/Tsumo.
+- Prevent visible Pon/Kan/Pass prompts from collapsing to LegalActions.None.
+- The prompt is still ignored when neither the modal host nor an actionable list label is observed, avoiding false Pass-only prompts during normal state transitions.

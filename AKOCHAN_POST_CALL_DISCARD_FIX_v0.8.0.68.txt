@@ -1,0 +1,11 @@
+Doman Mahjong Solver Debug v0.8.0.68
+
+原因
+- 自分のチー／ポン成立イベントを can_act=false で送信していたため、Akochanは鳴き後の必須打牌を返さなかった。
+- EMJが手牌を先に更新し、合法手のDiscardを後から表示した場合、同一手牌としてevents=0になっていた。
+
+修正
+- 自分のchi/ponを判断要求イベントとして送信し、その応答のdahaiを同じ打牌面へ適用。
+- daiminkan/ankan/kakanは嶺上ツモ前なので判断要求にしない。
+- 合法手表示の遅延で取りこぼした自摸イベントを、ownDrawOutstandingと手牌形を確認して再構成。
+- Retry、Sleep、Stickyフラグは追加していない。

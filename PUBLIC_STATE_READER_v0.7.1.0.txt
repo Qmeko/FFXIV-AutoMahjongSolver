@@ -1,0 +1,13 @@
+Doman Mahjong Solver Debug v0.7.1.0
+
+Opponent public-state reader implementation
+
+- Activates VisualPublicStateReader for every live Emj snapshot.
+- Recursively scans visible component node trees for tile image nodes.
+- Reconstructs each seat river using authoritative discard counts.
+- Detects sideways riichi declaration tiles and records riichi index/ippatsu.
+- Keeps a per-seat cache so transient UI refresh frames do not erase a decoded river.
+- Adds [VisualPublicState] diagnostics showing expected/candidate/decoded/cache state.
+- Mortal and built-in policy now receive decoded public rivers through StateSnapshot.Seats.
+
+Known limitation: opponent meld tile groups are not inferred in this build; only river and riichi public state are enabled.

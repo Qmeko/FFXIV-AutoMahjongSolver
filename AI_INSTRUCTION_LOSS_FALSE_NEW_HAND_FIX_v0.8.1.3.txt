@@ -1,0 +1,6 @@
+Doman Mahjong Solver Debug v0.8.1.3
+
+- Fixed false new-hand detection when EMJ river/meld data briefly drops during a normal draw.
+- New hand detection now requires authoritative wall replenishment.
+- Prevents end_kyoku/start_kyoku from replacing a live tsumo decision batch.
+- Preserves v0.8.1.1 instruction retention and v0.8.1.2 atomic call/journal changes.

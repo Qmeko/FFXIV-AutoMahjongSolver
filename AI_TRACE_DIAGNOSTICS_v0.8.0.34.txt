@@ -1,0 +1,16 @@
+﻿v0.8.0.34
+
+AI decision pipeline diagnostics only.
+
+Added [AITrace] and [AITraceSummary] timestamps for:
+- request start
+- launch resolution
+- process readiness
+- mjai batch construction
+- stdin write/flush
+- engine response wait
+- response parse
+- final action mapping
+
+Also records request id, event count, request/response byte size, legal surface and selected action.
+No AI policy, Best Move, Top 3, legal-action or autoplay behavior was intentionally changed.

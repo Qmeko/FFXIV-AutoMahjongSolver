@@ -1,0 +1,9 @@
+Doman Mahjong Solver Debug v0.7.0.4
+
+Riichi prompt commit fix
+
+- State-6 Riichi/Pass now uses a two-step commit path:
+  1. AtkComponentList.SelectItem(option, dispatchEvent: true)
+  2. Addon FireCallback([11, option])
+- Fixes the case where the log reported auto-riichi -> Ok but the visible Riichi/Pass prompt remained open.
+- Existing state-15 Pon/Chi/Kan/Ron/Pass dispatch remains unchanged.

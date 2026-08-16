@@ -1,0 +1,8 @@
+Doman Mahjong Solver Debug v0.8.0.88
+
+- ローカルMortalの既定ウェイトをVoidShine/mortal-298kへ変更
+- ビルド時にHugging Faceからmortal_298k.pthを取得し、MortalRuntime\bot\mortal.pthへ配置
+- 元の公開モデルはmortal.stock.pthとして保持
+- 50MB未満の不完全ダウンロードを拒否
+- 既存のMJAI通信、Mortalオンライン推論、Akochan、Best Move、Top 3経路は維持
+- インストール後に既存のMortal JSONLスモークテストを実行し、構造互換性と推論を検証

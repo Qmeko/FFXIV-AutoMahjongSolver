@@ -1,0 +1,6 @@
+Doman Mahjong Solver Debug v0.8.0.44
+
+- Opponent riichi discard now supplies an authoritative actor/tile for Pon/Chi/Pass prompts when call-candidate metadata is duplicated or missing.
+- Removed the temporary auto-play shutdown that disabled Riichi as soon as it became legal.
+- Preserves an exact Akochan Riichi recommendation on EMJ state 6 when the Riichi flag flickers off but the selected discard remains in the 14-tile hand.
+- Existing discard, Best Move, Top 3 and call-pattern selection behavior is unchanged.

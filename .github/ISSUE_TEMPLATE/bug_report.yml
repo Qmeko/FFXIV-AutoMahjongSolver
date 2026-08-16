@@ -1,0 +1,101 @@
+name: Bug report
+description: Something's broken or behaving unexpectedly.
+title: "[Bug] "
+labels: ["bug"]
+assignees: ["XeldarAlz"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. Please fill out as much as you can; it makes a huge difference.
+
+        **Shortcut for dev-tools users:** if you have *Developer tools* enabled in Settings, open `/mjauto` → click the bug icon → **Bug report** tab. Every attachment this template asks for has a button right there (Snap, Autosnap, Capture, Variant dump), plus an *Open plugin config dir* button so you can drag the files straight into this issue.
+
+        If you're not sure whether it's a bug or expected behavior, prefer [Help & troubleshooting discussions](https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver/discussions/new?category=help-troubleshooting); triage is faster there.
+
+        For security issues, please use [private vulnerability reporting](https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver/security/advisories/new) instead.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you see? What did you expect to see instead?
+      placeholder: "The plugin clicked the wrong call button when three chi options were offered..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps to trigger the bug. If it's intermittent, say so.
+      placeholder: |
+        1. Start a Doman Mahjong table
+        2. Switch to Auto-play
+        3. ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      description: Shown in /xlplugins next to "Doman Mahjong Solver", and at the bottom of the /mjauto window.
+      options:
+        - 0.1.1.1
+        - 0.1.1.0
+        - 0.1.0.12
+        - Older / not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: region
+    attributes:
+      label: Region / client
+      description: Which client were you on? Client variant is a frequent root cause.
+      options:
+        - EU
+        - NA
+        - JP
+        - OC
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Mode
+      description: Which mode were you in when it happened?
+      options:
+        - Hints
+        - Auto-play
+        - "Off"
+        - Switching modes when it happened
+        - Not applicable
+    validations:
+      required: true
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Attachments
+      description: |
+        **If you can provide any of these, it's hugely appreciated; they turn guesswork into a fix.**
+
+        Easiest path: open `/mjauto` → bug icon → **Bug report** tab. Press the buttons listed below, then hit *Open plugin config dir* and drag the resulting files into this box. GitHub will attach them and replace the drop with a link.
+
+        - **Snap**: one-shot memory dump
+        - **Start autosnap**: continuous capture for intermittent bugs (press **Stop autosnap** once you've reproduced it)
+        - **Arm** (under *Capture*): single-click capture for stuck popups; then click the in-game button you want recorded
+        - **Record clicks to emj-events.log** (under the *Diagnostics* tab): every UI callback the addon received
+        - **Dump variant**: only if the bug looks like a new-client / post-patch read failure
+        - The discard log is always on while you're in a match, just drag it in too
+        - Findings file: only if you have opt-in telemetry logging enabled
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, game context, hunches, anything that helps the bug land.

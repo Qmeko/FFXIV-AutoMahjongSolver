@@ -1,0 +1,6 @@
+Doman Mahjong Solver Debug v0.8.0.92
+
+- Prevents two developer-plugin copies from running simultaneously.
+- A second copy aborts before registering hooks, readers, autoplay loops, or Mortal sessions.
+- Fixes duplicate Agent/AtkValue events and competing Mortal trackers that produced events=0 loops and STUCK state.
+- Keep only one developer-plugin entry enabled.

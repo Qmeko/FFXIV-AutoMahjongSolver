@@ -1,0 +1,7 @@
+v0.8.0.55
+
+Fixed CS1061 in AutoPlayLoop.ScheduleCallDecision.
+Removed invalid ActionStateMachine.State access and logged the actual public state fields instead:
+- IsDispatchInFlight
+- IsRiichiConfirmPending
+- RiichiConfirmTile

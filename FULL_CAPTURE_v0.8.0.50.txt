@@ -1,0 +1,28 @@
+Doman Mahjong Solver Debug v0.8.0.50 - Full Hook Capture Build
+
+Purpose:
+- Re-acquire the correct Emj hook/callback/state transition points.
+- No speculative call-decision fix is included.
+- Captures all policy-safe data already available to the plugin.
+
+Outputs in the plugin configuration directory:
+- CALL_HOOK_CAPTURE_yyyyMMdd_HHmmss.jsonl
+- addon-emj-atkvalues.log
+- agent-emj-events.log
+- emj-events.log
+- emj-captures.log
+- memdumps/*.jsonl
+- existing plugin log / findings / sigprobe logs
+
+Changes:
+- EventLogger verbose mode forced ON.
+- Agent event AtkValue limit increased to 2048.
+- Memory dumps recorded on every requested state change without dedup/gating.
+- Addon/root/seat-pool/Agent dump ranges expanded to 0x4000 where applicable.
+- Full StateSnapshot, call prompt, and FireCallback pre/post events recorded as JSONL.
+
+Boundaries:
+- Dalamud public services and FFXIVClientStructs used by this plugin only.
+- No packet interception or modification.
+- No external-process memory inspection.
+- No unrestricted memory scanning or security bypass.

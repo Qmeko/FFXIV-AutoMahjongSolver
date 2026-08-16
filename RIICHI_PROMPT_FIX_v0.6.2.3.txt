@@ -1,0 +1,6 @@
+Doman Mahjong Solver Debug v0.6.2.3
+
+- Call/self-declare prompts are no longer blocked by the 10-second duplicate fingerprint guard.
+- Persistent Chi/Pass/Riichi selection surfaces are retried instead of being left STUCK.
+- Added [RiichiPrompt] diagnostics showing legal actions, Mortal choice, tile, and dispatch mode.
+- Ordinary discard duplicate suppression remains unchanged.

@@ -1,0 +1,11 @@
+{"kyoku_first":4,"aka_flag":true,"names":[],"type":"start_game","can_act":false}
+{"bakaze":"E","dora_marker":"F","honba":0,"kyoku":1,"kyotaku":0,"oya":0,"scores":[25000,25000,25000,25000],"tehais":[["3m","5m","3m","7s","6m","9p","8m","3s","4s","N","1s","C","2s"],["?","?","?","?","?","?","?","?","?","?","?","?","?"],["?","?","?","?","?","?","?","?","?","?","?","?","?"],["?","?","?","?","?","?","?","?","?","?","?","?","?"]],"type":"start_kyoku","can_act":false}
+{"actor":0,"pai":"6m","type":"tsumo","can_act":false}
+{"actor":0,"pai":"C","tsumogiri":false,"type":"dahai","can_act":false}
+{"actor":1,"pai":"?","type":"tsumo","can_act":false}
+{"actor":1,"pai":"1m","tsumogiri":false,"type":"dahai","can_act":false}
+{"actor":2,"pai":"?","type":"tsumo","can_act":false}
+{"actor":2,"pai":"9s","tsumogiri":false,"type":"dahai","can_act":false}
+{"actor":3,"pai":"?","type":"tsumo","can_act":false}
+{"actor":3,"pai":"F","tsumogiri":false,"type":"dahai","can_act":false}
+{"actor":0,"pai":"9m","type":"tsumo"}

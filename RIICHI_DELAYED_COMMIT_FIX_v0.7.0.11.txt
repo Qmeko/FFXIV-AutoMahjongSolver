@@ -1,0 +1,7 @@
+Doman Mahjong Solver Debug v0.7.0.11
+
+- Fixes Riichi/Pass list rows that remained visible after SelectItem returned Ok.
+- The first click still uses AtkComponentList.SelectItem.
+- If the prompt remains visible, opcode-11 commit is sent on a later framework tick.
+- Retries alternate commit -> select -> commit, instead of repeating cosmetic selection only.
+- This avoids the same-frame SelectItem+FireCallback race from older builds.

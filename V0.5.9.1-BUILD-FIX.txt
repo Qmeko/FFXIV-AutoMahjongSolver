@@ -1,0 +1,5 @@
+Doman Mahjong Solver Debug + Mortal AI v0.5.9.1
+
+Build fix:
+- Added System.Text.Json namespace import to ExternalMjaiProcess.cs.
+- Fixes CS0246 for JsonException at ExternalMjaiProcess.cs line 399.

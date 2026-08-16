@@ -1,0 +1,15 @@
+v0.8.0.53 - Windows path length build fix
+
+Cause:
+The previous source archive contained a long nested root directory name. During Release packaging,
+MSBuild could enumerate AkochanRuntime parameter files but failed to copy them because the absolute
+source paths exceeded the legacy Windows path limit, producing MSB3030 "file not found" errors.
+
+Fix:
+- Source archive root shortened to DMS-v0.8.0.53-FULL-TRACE-SOURCE.
+- Package and assembly version updated to 0.8.0.53.
+- One-click build now stops with a clear error if the extraction path is still too long.
+- AkochanRuntime parameter files remain included; none were removed.
+
+Recommended extraction path:
+J:\DMS053\

@@ -1,0 +1,7 @@
+Doman Mahjong Solver Debug v0.7.0.5
+
+- Restored humanized Riichi delay through the configured Riichi delay range.
+- Kept the existing 700 ms delay between Riichi declaration and tile confirmation.
+- Added a one-shot 180 ms confirmation retry when the exact same call/Riichi/Pass prompt remains visible.
+- The retry never loops and is cancelled automatically when state or legal actions change.
+- Applies to Riichi, Pass, Pon, Chi, Kan, Ron and Tsumo prompt selections.

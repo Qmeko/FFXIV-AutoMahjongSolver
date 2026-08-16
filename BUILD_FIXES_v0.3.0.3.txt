@@ -1,0 +1,18 @@
+Doman Mahjong Solver Debug + Mortal AI v0.3.0.3
+
+Fixed: several-second game freeze when a match/hand starts.
+
+Cause
+- ExternalMjaiProcess started Python, imported PyTorch, loaded mortal.pth, and waited for stdout inside IPolicy.Choose.
+- IPolicy.Choose is called from Dalamud's framework/UI path, so the whole game could stall until Mortal answered.
+
+Changes
+- Mortal prewarm starts immediately after plugin load on Task.Run.
+- A synthetic legal hand forces PyTorch/model loading and one inference before real play.
+- The warmed Mortal process remains alive for real matches.
+- Every real JSONL request/response is processed by one serialized background task.
+- IPolicy.Choose now returns immediately and never waits for process startup or inference.
+- Auto-play waits without clicking while the Mortal result is pending.
+- Call prompts are not incorrectly passed while Mortal is warming up.
+- The policy/UI cache polls pending decisions every 150 ms and switches to the completed Mortal result.
+- Process shutdown interrupts pending reads so plugin reload also remains responsive.

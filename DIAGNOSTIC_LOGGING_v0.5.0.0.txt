@@ -1,0 +1,11 @@
+Doman Mahjong Solver Debug v0.5.0.0
+
+Added /xllog decision diagnostics:
+- [MahjongSnapshot]
+- [OpponentSnapshot]
+- [MortalInput]
+- [MortalDecision]
+
+The entries are emitted only when the policy is asked for a decision, not every frame.
+Settings > Developer > Diagnostic decision logging (/xllog) controls the feature.
+Default: ON for this diagnostic build.
