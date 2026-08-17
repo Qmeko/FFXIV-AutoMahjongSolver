@@ -5,6 +5,7 @@
 A Dalamud plugin that reads Doman Mahjong and uses Mortal / Akochan for discard, calls, riichi, and win actions.
 
 Original project: [XeldarAlz/FFXIV-DomanMahjongSolver](https://github.com/XeldarAlz/FFXIV-DomanMahjongSolver)
+Please support him.
 
 ## Install
 
